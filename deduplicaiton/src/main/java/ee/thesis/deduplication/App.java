@@ -20,10 +20,14 @@ public class App {
 				args=(String[]) ArrayUtils.removeElement(args, args[0]);
 				ConvertionToEntities.convertToEntities(args);
 			}
-			else if(args[0].trim().toLowerCase().equals("deduplication"))
+			else if(args[0].trim().toLowerCase().equals("deduplication")){
+				args=(String[]) ArrayUtils.removeElement(args, args[0]);
 				Deduplication.Deduplicate(args);
-			else if(args[0].trim().toLowerCase().equals("evaluation"))
+			}				
+			else if(args[0].trim().toLowerCase().equals("evaluation")){
+				args=(String[]) ArrayUtils.removeElement(args, args[0]);
 				EvaluateDeduplication.evaluate(args);
+			}				
 		}catch(Exception ex){
 			System.out.println(ex.getMessage());
 		}
